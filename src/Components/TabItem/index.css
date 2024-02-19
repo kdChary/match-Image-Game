@@ -8,7 +8,9 @@
 }
 
 .tab-active {
+  border: none;
   border-bottom: solid 2.3px #fec653;
+  background-color: transparent;
   color: #fec653;
   font-size: 13px;
   font-weight: 600;

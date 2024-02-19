@@ -32,12 +32,12 @@
 }
 
 .score-text {
-  font-size: 15px;
+  font-size: 11px;
 }
 
 .score {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: #fec653;
 }
 
@@ -46,9 +46,13 @@
   justify-content: space-around;
   align-items: center;
   color: #fec653;
+  margin-left: 3px;
 }
 .clock-image {
-  width: 15px;
-  height: 15px;
+  width: 11px;
+  height: 11px;
   margin-right: 5px;
+}
+.countdown {
+  font-size: 11px;
 }
