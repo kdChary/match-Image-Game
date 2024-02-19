@@ -1,4 +1,4 @@
-import TabItem from './Components/TabItem'
+import Thumbnails from './Components/Thumbnails'
 import './App.css'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -248,6 +248,6 @@ const imagesList = [
 ]
 
 // Replace your code here
-const App = () => <TabItem />
+const App = () => <Thumbnails />
 
 export default App
