@@ -1,4 +1,4 @@
-import Navbar from './Components/Navbar'
+import TabItem from './Components/TabItem'
 import './App.css'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -247,9 +247,7 @@ const imagesList = [
   },
 ]
 
-// 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
-
 // Replace your code here
-const App = () => <Navbar />
+const App = () => <TabItem />
 
 export default App

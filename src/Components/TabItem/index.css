@@ -1,0 +1,15 @@
+.tab-inactive {
+  border: none;
+  padding: 5px 11px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tab-active {
+  border-bottom: solid 2.3px #fec653;
+  color: #fec653;
+  font-size: 13px;
+  font-weight: 600;
+}
