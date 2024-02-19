@@ -4,16 +4,16 @@ const TabItem = props => {
   const {tabDetails, isActive, clickedImage} = props
 
   const toggleClass = isActive ? 'tab-active' : 'tab-inactive'
-  //   const {tabId = 0, displayText = 'styleMe'} = tabDetails
+  const {tabId = 0, displayText = 'styleMe'} = tabDetails
 
   const onTabClicked = () => {
-    clickedImage()
+    clickedImage(tabId)
   }
 
   return (
     <>
       <button type="button" onClick={onTabClicked} className={toggleClass}>
-        displayText
+        {displayText}
       </button>
     </>
   )
