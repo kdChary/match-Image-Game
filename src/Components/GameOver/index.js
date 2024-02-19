@@ -24,7 +24,7 @@ const GameOver = props => {
           alt="reset"
           className="reset-icon"
         />
-        Play Again
+        PLAY AGAIN
       </button>
     </div>
   )

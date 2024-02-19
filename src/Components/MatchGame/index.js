@@ -268,8 +268,19 @@ class MatchGame extends Component {
   componentDidMount() {
     const {timerCount} = this.state
     if (timerCount > 0) {
-      this.updateCountInterval = setInterval(this.updateCount, 500)
+      this.updateCountInterval = setInterval(this.updateCount, 1000)
     }
+  }
+
+  playAgain = () => {
+    this.updateCountInterval = setInterval(this.updateCount, 1000)
+    this.setState({
+      score: 0,
+      timerCount: 60,
+      randomImage: imagesList[0],
+      tabId: tabsList[0].tabId,
+      clickedWrongImage: false,
+    })
   }
 
   updateCount = () => {
@@ -326,7 +337,7 @@ class MatchGame extends Component {
           {timerCount > 0 && !clickedWrongImage ? (
             <div className="game-container">
               {this.renderMatchImage(randomImage)}
-              <div className="tab-items-card">
+              <ul className="tab-items-card">
                 {tabsList.map(eachTab => (
                   <TabItem
                     key={eachTab.tabId}
@@ -335,7 +346,7 @@ class MatchGame extends Component {
                     clickedTabItem={this.clickedTabItem}
                   />
                 ))}
-              </div>
+              </ul>
               <ul className="thumbnails-list">
                 {filteredImages.map(eachImage => (
                   <Thumbnails
@@ -347,7 +358,7 @@ class MatchGame extends Component {
               </ul>
             </div>
           ) : (
-            <GameOver />
+            <GameOver score={score} playAgain={this.playAgain} />
           )}
         </div>
       </>
