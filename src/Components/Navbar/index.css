@@ -1,0 +1,54 @@
+.nav-bar {
+  background-color: #2c0e3a;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 11px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+.website-logo {
+  width: 131px;
+}
+
+.nav-score-time-section {
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff;
+  align-items: center;
+  width: 33%;
+}
+@media (min-width: 992px) {
+  .nav-score-time-section {
+    width: 21%;
+  }
+}
+
+.score-text {
+  font-size: 15px;
+}
+
+.score {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fec653;
+}
+
+.countdown-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fec653;
+}
+.clock-image {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}

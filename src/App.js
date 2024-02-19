@@ -1,3 +1,4 @@
+import Navbar from './Components/Navbar'
 import './App.css'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -246,7 +247,9 @@ const imagesList = [
   },
 ]
 
+// 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
+
 // Replace your code here
-const App = () => <div>Hello World</div>
+const App = () => <Navbar />
 
 export default App
