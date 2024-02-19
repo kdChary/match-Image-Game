@@ -1,4 +1,4 @@
-import Thumbnails from './Components/Thumbnails'
+import GameOver from './Components/GameOver'
 import './App.css'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -248,6 +248,6 @@ const imagesList = [
 ]
 
 // Replace your code here
-const App = () => <Thumbnails />
+const App = () => <GameOver />
 
 export default App

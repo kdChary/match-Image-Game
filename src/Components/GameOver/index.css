@@ -1,0 +1,36 @@
+.game-over-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-sm-bg.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding-top: 46%;
+  padding-bottom: 23%;
+}
+
+.trophy-icon {
+  width: 270px;
+  height: 170px;
+}
+.game-score-card {
+  color: #ffffff;
+  text-align: center;
+  padding: 13px;
+}
+.reset-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #cf60c8;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.reset-icon {
+  width: 15px;
+  height: 15px;
+}
