@@ -1,6 +1,7 @@
 import './index.css'
 
-const Navbar = () => {
+const Navbar = props => {
+  const {score, timeRemaining} = props
   const imageUrl =
     'https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png'
   const altText = 'website logo'
@@ -12,7 +13,7 @@ const Navbar = () => {
       </div>
       <div className="nav-score-time-section">
         <p className="score-text">
-          Score: <span className="score">0</span>
+          Score: <span className="score">{score}</span>
         </p>
         <div className="countdown-section">
           <img
@@ -20,7 +21,7 @@ const Navbar = () => {
             alt="timer"
             className="clock-image"
           />
-          <h5 className="countdown">60 sec</h5>
+          <h5 className="countdown">{timeRemaining} sec</h5>
         </div>
       </div>
     </nav>
