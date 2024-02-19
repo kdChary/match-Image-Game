@@ -253,26 +253,50 @@ const tabsList = [
 ]
 
 class MatchGame extends Component {
-  state = {score: 0, timerCount: 60, category: tabsList[0].tabId}
+  state = {
+    score: 0,
+    timerCount: 60,
+    randomImage: imagesList[0],
+    tabId: tabsList[0].tabId,
+    clickedWrongImage: false,
+  }
 
   //   componentWillUnmount() {
   //     clearInterval(this.updateCountInterval)
   //   }
 
-  //   componentDidMount() {
-  //     const {timerCount} = this.state
-  //     if (timerCount > 0) {
-  //       this.updateCountInterval = setInterval(this.updateCount, 500)
-  //     }
-  //   }
+  componentDidMount() {
+    const {timerCount} = this.state
+    if (timerCount > 0) {
+      this.updateCountInterval = setInterval(this.updateCount, 500)
+    }
+  }
 
-  //   updateCount = () => {
-  //     this.setState(prevState => ({timerCount: prevState.timerCount - 1}))
-  //   }
+  updateCount = () => {
+    this.setState(prevState => ({timerCount: prevState.timerCount - 1}))
+  }
 
-  renderMatchImage = () => {
+  imageClicked = imageId => {
+    const {randomImage} = this.state
     const imageIndex = Math.ceil(Math.random() * imagesList.length - 1)
-    const randomImage = imagesList[imageIndex]
+    const newImage = imagesList[imageIndex]
+
+    if (imageId === randomImage.id) {
+      this.setState(prevState => ({
+        score: prevState.score + 1,
+        randomImage: newImage,
+      }))
+    } else {
+      clearInterval(this.updateCountInterval)
+      this.setState({clickedWrongImage: true})
+    }
+  }
+
+  clickedTabItem = id => {
+    this.setState({tabId: id})
+  }
+
+  renderMatchImage = randomImage => {
     const {imageUrl} = randomImage
 
     return (
@@ -283,24 +307,32 @@ class MatchGame extends Component {
   }
 
   render() {
-    const {score, timerCount, category} = this.state
-    const filteredImages = imagesList.filter(
-      image => image.category === category,
-    )
+    const {
+      score,
+      timerCount,
+      randomImage,
+      tabId,
+      clickedWrongImage,
+    } = this.state
+    const filteredImages = imagesList.filter(image => image.category === tabId)
+    if (timerCount === 0) {
+      clearInterval(this.updateCountInterval)
+    }
 
     return (
       <>
         <Navbar score={score} timeRemaining={timerCount} />
         <div className="app-body">
-          {timerCount > 0 ? (
+          {timerCount > 0 && !clickedWrongImage ? (
             <div className="game-container">
-              {this.renderMatchImage()}
+              {this.renderMatchImage(randomImage)}
               <div className="tab-items-card">
                 {tabsList.map(eachTab => (
                   <TabItem
                     key={eachTab.tabId}
                     tabDetails={eachTab}
-                    isActive={category === eachTab.tabId}
+                    isActive={tabId === eachTab.tabId}
+                    clickedTabItem={this.clickedTabItem}
                   />
                 ))}
               </div>
