@@ -29,6 +29,8 @@
   font-size: 13px;
   font-weight: 500;
   color: #ffffff;
+  outline: none;
+  cursor: pointer;
 }
 .reset-icon {
   width: 15px;
